@@ -1,0 +1,26 @@
+{
+  "name": "carpooling-monorepo",
+  "private": true,
+  "packageManager": "npm@10.9.3",
+  "workspaces": [
+    "carpooling-passenger",
+    "carpooling-driver",
+    "carpooling-admin",
+    "carpooling-common"
+  ],
+  "scripts": {
+    "build": "turbo run build",
+    "dev": "turbo run dev",
+    "lint": "turbo run lint",
+    "preview": "turbo run preview",
+    "dev:passenger": "turbo run dev --filter=carpooling-passenger",
+    "dev:driver": "turbo run dev --filter=carpooling-driver",
+    "dev:admin": "turbo run dev --filter=carpooling-admin",
+    "build:passenger": "turbo run build --filter=carpooling-passenger",
+    "build:driver": "turbo run build --filter=carpooling-driver",
+    "build:admin": "turbo run build --filter=carpooling-admin"
+  },
+  "devDependencies": {
+    "turbo": "^2.4.4"
+  }
+}

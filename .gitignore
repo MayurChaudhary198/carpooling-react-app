@@ -1,0 +1,50 @@
+# Turborepo
+.turbo
+
+# Node dependencies
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Build outputs
+dist/
+dist-ssr/
+build/
+*.tsbuildinfo
+
+# Environment files & Secrets (never commit actual .env)
+.env
+.env.*
+.env.local
+.env.*.local
+!.env.example
+
+# Flutter / Dart cache & local build artifacts
+.dart_tool/
+**/.dart_tool/
+local.properties
+**/local.properties
+*.dill
+**/*.dill
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# OS generated files
+.DS_Store
+Thumbs.db
+.agents
+.npm-cache

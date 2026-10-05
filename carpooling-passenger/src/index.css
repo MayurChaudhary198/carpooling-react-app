@@ -1,0 +1,477 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --color-background: #F8F9FA;
+  --color-foreground: #09090B;
+
+  --color-card: #FFFFFF;
+  --color-card-foreground: #09090B;
+
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #09090B;
+
+  --color-primary: #09090B;
+  --color-primary-foreground: #FFFFFF;
+
+  --color-secondary: #F1F2F4;
+  --color-secondary-foreground: #09090B;
+
+  --color-muted: #F1F2F4;
+  --color-muted-foreground: #64748B;
+
+  --color-accent: #E2E8F0;
+  --color-accent-foreground: #09090B;
+
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #FFFFFF;
+
+  --color-border: #E2E8F0;
+  --color-input: #E2E8F0;
+  --color-ring: #09090B;
+
+  --radius: 0.75rem;
+}
+
+:root.dark {
+  --color-background: #09090B;
+  --color-foreground: #FAFAFA;
+
+  --color-card: #121216;
+  --color-card-foreground: #FAFAFA;
+
+  --color-popover: #121216;
+  --color-popover-foreground: #FAFAFA;
+
+  --color-primary: #FFFFFF;
+  --color-primary-foreground: #09090B;
+
+  --color-secondary: #18181D;
+  --color-secondary-foreground: #FAFAFA;
+
+  --color-muted: #18181D;
+  --color-muted-foreground: #A1A1AA;
+
+  --color-accent: #222228;
+  --color-accent-foreground: #FAFAFA;
+
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #FFFFFF;
+
+  --color-border: #24242B;
+  --color-input: #24242B;
+  --color-ring: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   Black & White Theme: Global Brand & Component Mappings
+   ========================================================================== */
+
+/* Light mode hardcoded overrides */
+.bg-\[\#0F766E\],
+.bg-teal-600,
+.bg-teal-700,
+.bg-teal-800 {
+  background-color: var(--color-primary) !important;
+  color: var(--color-primary-foreground) !important;
+}
+
+.bg-\[\#0F766E\]\/10,
+.bg-\[\#0F766E\]\/20,
+.bg-teal-500\/10,
+.bg-teal-500\/20 {
+  background-color: #F4F4F5 !important;
+  color: #09090B !important;
+}
+
+.text-\[\#0F766E\],
+.text-\[\#0D9488\],
+.text-teal-600,
+.text-teal-700,
+.text-teal-500 {
+  color: var(--color-foreground) !important;
+}
+
+.border-\[\#0F766E\],
+.border-\[\#0D9488\],
+.border-teal-500,
+.border-teal-600 {
+  border-color: var(--color-border) !important;
+}
+
+.bg-\[\#0B132B\] {
+  background-color: #09090B !important;
+  color: #FAFAFA !important;
+}
+
+.bg-\[\#0B132B\]\/55,
+.bg-\[\#0B132B\]\/45,
+.bg-\[\#0B132B\]\/35,
+.bg-\[\#0B132B\]\/70,
+.bg-\[\#0B132B\]\/85 {
+  background-color: rgb(9 9 11 / 0.85) !important;
+}
+
+.bg-\[\#FAFAF8\],
+.bg-\[\#F8F2E7\],
+.bg-\[\#EEF2F1\],
+.bg-\[\#E7F2F0\] {
+  background-color: var(--color-background) !important;
+}
+
+/* ==========================================================================
+   Dark Mode Monochrome Mappings
+   ========================================================================== */
+
+.dark .bg-\[\#FAFAF8\],
+.dark .bg-\[\#F8F2E7\],
+.dark .bg-\[\#EEF2F1\],
+.dark .bg-\[\#E7F2F0\] {
+  background-color: var(--color-background) !important;
+}
+
+.dark .bg-white {
+  background-color: var(--color-card) !important;
+}
+
+.dark .bg-white\/80 {
+  background-color: rgb(18 18 20 / 0.8) !important;
+}
+
+.dark .bg-white\/55,
+.dark .bg-white\/35,
+.dark .bg-white\/25,
+.dark .bg-white\/15,
+.dark .bg-white\/30,
+.dark .bg-white\/45,
+.dark .bg-white\/40,
+.dark .bg-white\/50,
+.dark .bg-white\/65,
+.dark .bg-white\/70,
+.dark .bg-white\/85 {
+  background-color: rgb(18 18 20 / 0.7) !important;
+}
+
+.dark .hover\:bg-white:hover,
+.dark .hover\:bg-white\/90:hover,
+.dark .hover\:bg-white\/85:hover,
+.dark .hover\:bg-white\/70:hover,
+.dark .hover\:bg-white\/50:hover,
+.dark .hover\:bg-white\/40:hover,
+.dark .hover\:bg-white\/30:hover {
+  background-color: #27272A !important;
+}
+
+.dark .bg-\[\#0B132B\] {
+  background-color: #0A0A0A !important;
+  color: #FAFAFA !important;
+}
+
+.dark .text-black,
+.dark .text-black\/90,
+.dark .text-black\/80,
+.dark .text-black\/70,
+.dark .text-black\/60,
+.dark .text-slate-950,
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-gray-950,
+.dark .text-gray-900,
+.dark .text-gray-800,
+.dark .text-zinc-950,
+.dark .text-zinc-900,
+.dark .text-zinc-800,
+.dark .text-neutral-950,
+.dark .text-neutral-900,
+.dark .text-neutral-800,
+.dark .text-\[\#111827\],
+.dark .text-\[\#0B132B\],
+.dark .text-\[\#0F172A\],
+.dark .text-\[\#1E293B\],
+.dark .text-\[\#1F2937\],
+.dark .text-\[\#374151\] {
+  color: var(--color-foreground) !important;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-gray-700,
+.dark .text-gray-600,
+.dark .text-zinc-700,
+.dark .text-zinc-600,
+.dark .text-neutral-700,
+.dark .text-neutral-600,
+.dark .text-\[\#4B5563\],
+.dark .text-\[\#6B7280\],
+.dark .text-\[\#64748B\],
+.dark .text-\[\#334155\] {
+  color: var(--color-muted-foreground) !important;
+}
+
+.dark .text-slate-500,
+.dark .text-gray-500,
+.dark .text-zinc-500,
+.dark .text-neutral-500,
+.dark .text-\[\#94A3B8\],
+.dark .text-\[\#9CA3AF\] {
+  color: #A1A1AA !important;
+}
+
+.dark .text-\[\#0F766E\] {
+  color: var(--color-foreground) !important;
+}
+
+/* Light pastel badge & box adaptations for dark mode */
+.dark .bg-slate-50,
+.dark .bg-gray-50,
+.dark .bg-zinc-50,
+.dark .bg-neutral-50,
+.dark .bg-slate-100,
+.dark .bg-gray-100,
+.dark .bg-zinc-100,
+.dark .bg-neutral-100 {
+  background-color: var(--color-secondary) !important;
+  color: var(--color-foreground) !important;
+}
+
+.dark .bg-teal-50,
+.dark .bg-teal-100 {
+  background-color: rgba(20, 184, 166, 0.15) !important;
+  color: #2DD4BF !important;
+}
+
+.dark .bg-emerald-50,
+.dark .bg-emerald-100 {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  color: #34D399 !important;
+}
+
+.dark .bg-blue-50,
+.dark .bg-blue-100 {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+  color: #60A5FA !important;
+}
+
+.dark .bg-amber-50,
+.dark .bg-amber-100 {
+  background-color: rgba(245, 158, 11, 0.15) !important;
+  color: #FBBF24 !important;
+}
+
+.dark .bg-rose-50,
+.dark .bg-rose-100,
+.dark .bg-red-50,
+.dark .bg-red-100 {
+  background-color: rgba(239, 68, 68, 0.15) !important;
+  color: #F87171 !important;
+}
+
+.dark .border-black\/15,
+.dark .border-black\/20,
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-gray-100,
+.dark .border-gray-200 {
+  border-color: var(--color-border) !important;
+}
+
+.dark .border-black\/10,
+.dark .border-black\/8,
+.dark .border-black\/5 {
+  border-color: var(--color-border) !important;
+}
+
+.dark .divide-black\/5 > :not([hidden]) ~ :not([hidden]),
+.dark .divide-black\/8 > :not([hidden]) ~ :not([hidden]),
+.dark .divide-black\/10 > :not([hidden]) ~ :not([hidden]),
+.dark .divide-slate-100 > :not([hidden]) ~ :not([hidden]),
+.dark .divide-slate-200 > :not([hidden]) ~ :not([hidden]) {
+  border-color: var(--color-border) !important;
+}
+
+.dark .bg-\[\#0F766E\] {
+  background-color: #FFFFFF !important;
+  color: #000000 !important;
+}
+
+.dark .bg-\[\#0F766E\]\/10,
+.dark .bg-\[\#0F766E\]\/20,
+.dark .bg-teal-500\/10,
+.dark .bg-teal-500\/20 {
+  background-color: #27272A !important;
+  color: #FAFAFA !important;
+}
+
+.dark .hover\:bg-\[\#0D6862\]:hover,
+.dark .hover\:bg-\[\#0B615D\]:hover {
+  background-color: #E4E4E7 !important;
+  color: #000000 !important;
+}
+
+.dark .shadow-\[0_8px_30px_rgba\(17\,24\,39\,0\.04\)\],
+.dark .shadow-\[0_10px_30px_rgba\(17\,24\,39\,0\.04\)\],
+.dark .shadow-\[0_16px_40px_rgba\(17\,24\,39\,0\.06\)\],
+.dark .shadow-\[0_16px_40px_rgba\(17\,24\,39\,0\.08\)\],
+.dark .shadow-\[0_18px_50px_rgba\(17\,24\,39\,0\.08\)\] {
+  box-shadow: 0 16px 40px rgb(0 0 0 / 0.5) !important;
+}
+
+.dark .shadow-sm,
+.dark .shadow-md {
+  box-shadow: 0 12px 30px rgb(0 0 0 / 0.4) !important;
+}
+
+.passenger-pullcord {
+  --pullcord-top: 0px;
+  --pullcord-right: 1.5rem;
+  --pullcord-z: 40;
+  --pullcord-ink: color-mix(in srgb, var(--color-muted-foreground) 54%, transparent);
+}
+
+.font-display {
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui,
+    sans-serif;
+}
+
+.scrollbar-none {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+.scrollbar-none::-webkit-scrollbar {
+  display: none;
+}
+
+/* react-datepicker overrides */
+.react-datepicker-wrapper { width: 100%; }
+.react-datepicker__input-container { width: 100%; }
+
+/* Date + time picker: calendar left, time list right (not stacked) */
+.react-datepicker:has(.react-datepicker__time-container) {
+  display: flex !important;
+  flex-direction: row !important;
+  flex-wrap: nowrap !important;
+  align-items: stretch !important;
+  font-family: inherit !important;
+  border: 1px solid var(--color-border) !important;
+  border-radius: 12px !important;
+  box-shadow: 0 10px 25px -5px rgb(0 0 0 / 0.1) !important;
+  overflow: hidden !important;
+  padding: 0 !important;
+}
+
+.react-datepicker:has(.react-datepicker__time-container) .react-datepicker__month-container {
+  float: none !important;
+}
+
+.react-datepicker:has(.react-datepicker__time-container) .react-datepicker__time-container {
+  float: none !important;
+  width: 96px !important;
+  border-left: 1px solid var(--color-border) !important;
+  border-top: none !important;
+}
+
+.react-datepicker:has(.react-datepicker__time-container) .react-datepicker__header {
+  background-color: var(--color-muted) !important;
+  border-bottom: 1px solid var(--color-border) !important;
+  border-radius: 0 !important;
+  padding-top: 10px !important;
+}
+
+.react-datepicker:has(.react-datepicker__time-container) .react-datepicker__header--time {
+  padding-bottom: 8px !important;
+}
+
+.react-datepicker:has(.react-datepicker__time-container) .react-datepicker__time-box {
+  width: 96px !important;
+}
+
+.react-datepicker:has(.react-datepicker__time-container) .react-datepicker__time-list {
+  height: 252px !important;
+  scrollbar-width: thin;
+}
+
+.react-datepicker:has(.react-datepicker__time-container) .react-datepicker__time-list-item {
+  height: auto !important;
+  padding: 8px 10px !important;
+  font-size: 0.8125rem !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.react-datepicker:has(.react-datepicker__time-container) .react-datepicker__time-list-item--selected {
+  background-color: var(--color-primary) !important;
+  color: var(--color-primary-foreground) !important;
+  font-weight: 600 !important;
+}
+
+.react-datepicker:has(.react-datepicker__time-container) .react-datepicker__time-list-item:hover {
+  background-color: var(--color-accent) !important;
+}
+
+.react-datepicker:has(.react-datepicker__time-container) .react-datepicker__day--selected,
+.react-datepicker:has(.react-datepicker__time-container) .react-datepicker__day--keyboard-selected {
+  background-color: var(--color-primary) !important;
+  color: var(--color-primary-foreground) !important;
+  border-radius: 8px !important;
+}
+
+.react-datepicker:has(.react-datepicker__time-container) .react-datepicker__day:hover {
+  border-radius: 8px !important;
+  background-color: var(--color-accent) !important;
+}
+
+.react-datepicker:has(.react-datepicker__time-container) .react-datepicker__triangle {
+  display: none;
+}
+
+/* Leaflet z-index fix */
+.leaflet-container { z-index: 0; }
+
+@keyframes routeDash {
+  to {
+    stroke-dashoffset: -120;
+  }
+}
+
+@keyframes carSlide {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(8px, -4px, 0);
+  }
+}
+
+.animate-route-dash {
+  animation: routeDash 18s linear infinite;
+}
+
+.animate-car-slide {
+  animation: carSlide 9s ease-in-out infinite;
+}
