@@ -1,0 +1,265 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap");
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  --font-sans: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  --font-heading: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+
+  --color-background: #F8F9FA;
+  --color-foreground: #09090B;
+
+  --color-card: #FFFFFF;
+  --color-card-foreground: #09090B;
+
+  --color-popover: #FFFFFF;
+  --color-popover-foreground: #09090B;
+
+  --color-primary: #09090B;
+  --color-primary-foreground: #FFFFFF;
+
+  --color-secondary: #F1F2F4;
+  --color-secondary-foreground: #09090B;
+
+  --color-muted: #F1F2F4;
+  --color-muted-foreground: #64748B;
+
+  --color-accent: #E2E8F0;
+  --color-accent-foreground: #09090B;
+
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #FFFFFF;
+
+  --color-border: #E2E8F0;
+  --color-input: #E2E8F0;
+  --color-ring: #09090B;
+
+  --radius: 0.75rem;
+}
+
+:root.dark, .dark {
+  --color-background: #09090B;
+  --color-foreground: #FAFAFA;
+
+  --color-card: #121216;
+  --color-card-foreground: #FAFAFA;
+
+  --color-popover: #121216;
+  --color-popover-foreground: #FAFAFA;
+
+  --color-primary: #FFFFFF;
+  --color-primary-foreground: #09090B;
+
+  --color-secondary: #18181D;
+  --color-secondary-foreground: #FAFAFA;
+
+  --color-muted: #18181D;
+  --color-muted-foreground: #A1A1AA;
+
+  --color-accent: #222228;
+  --color-accent-foreground: #FAFAFA;
+
+  --color-destructive: #EF4444;
+  --color-destructive-foreground: #FFFFFF;
+
+  --color-border: #24242B;
+  --color-input: #24242B;
+  --color-ring: #FFFFFF;
+}
+
+* {
+  box-sizing: border-box;
+  border-color: var(--color-border);
+}
+
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
+  font-family: "Manrope", -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* ==========================================================================
+   Black & White Theme: Global Brand & Component Mappings
+   ========================================================================== */
+
+/* Light mode hardcoded overrides */
+.bg-\[\#0F766E\],
+.bg-teal-600,
+.bg-teal-700,
+.bg-teal-800 {
+  background-color: var(--color-primary) !important;
+  color: var(--color-primary-foreground) !important;
+}
+
+.bg-\[\#0F766E\]\/10,
+.bg-\[\#0F766E\]\/20,
+.bg-teal-500\/10,
+.bg-teal-500\/20 {
+  background-color: #F4F4F5 !important;
+  color: #09090B !important;
+}
+
+.text-\[\#0F766E\],
+.text-\[\#0D9488\],
+.text-teal-600,
+.text-teal-700,
+.text-teal-500 {
+  color: var(--color-foreground) !important;
+}
+
+.border-\[\#0F766E\],
+.border-\[\#0D9488\],
+.border-teal-500,
+.border-teal-600 {
+  border-color: var(--color-border) !important;
+}
+
+.bg-\[\#0B132B\] {
+  background-color: #09090B !important;
+  color: #FAFAFA !important;
+}
+
+.bg-\[\#FAFAF8\],
+.bg-\[\#F8F2E7\],
+.bg-\[\#EEF2F1\],
+.bg-\[\#E7F2F0\] {
+  background-color: var(--color-background) !important;
+}
+
+/* Dark mode monochrome mappings */
+.dark .bg-\[\#FAFAF8\],
+.dark .bg-\[\#F8F2E7\],
+.dark .bg-\[\#EEF2F1\],
+.dark .bg-\[\#E7F2F0\] {
+  background-color: var(--color-background) !important;
+}
+
+.dark .bg-white {
+  background-color: var(--color-card) !important;
+}
+
+.dark .bg-\[\#0F766E\]\/10,
+.dark .bg-\[\#0F766E\]\/20,
+.dark .bg-teal-500\/10,
+.dark .bg-teal-500\/20 {
+  background-color: #18181D !important;
+  color: #FAFAFA !important;
+}
+
+.dark .text-black,
+.dark .text-black\/90,
+.dark .text-black\/80,
+.dark .text-black\/70,
+.dark .text-black\/60,
+.dark .text-slate-950,
+.dark .text-slate-900,
+.dark .text-slate-800,
+.dark .text-gray-950,
+.dark .text-gray-900,
+.dark .text-gray-800,
+.dark .text-zinc-950,
+.dark .text-zinc-900,
+.dark .text-zinc-800,
+.dark .text-neutral-950,
+.dark .text-neutral-900,
+.dark .text-neutral-800,
+.dark .text-\[\#111827\],
+.dark .text-\[\#0B132B\],
+.dark .text-\[\#0F172A\],
+.dark .text-\[\#1E293B\],
+.dark .text-\[\#1F2937\],
+.dark .text-\[\#374151\] {
+  color: var(--color-foreground) !important;
+}
+
+.dark .text-slate-700,
+.dark .text-slate-600,
+.dark .text-gray-700,
+.dark .text-gray-600,
+.dark .text-zinc-700,
+.dark .text-zinc-600,
+.dark .text-neutral-700,
+.dark .text-neutral-600,
+.dark .text-\[\#4B5563\],
+.dark .text-\[\#6B7280\],
+.dark .text-\[\#64748B\],
+.dark .text-\[\#334155\] {
+  color: var(--color-muted-foreground) !important;
+}
+
+.dark .text-slate-500,
+.dark .text-gray-500,
+.dark .text-zinc-500,
+.dark .text-neutral-500,
+.dark .text-\[\#94A3B8\],
+.dark .text-\[\#9CA3AF\] {
+  color: #A1A1AA !important;
+}
+
+/* Light pastel badge & box adaptations for dark mode */
+.dark .bg-slate-50,
+.dark .bg-gray-50,
+.dark .bg-zinc-50,
+.dark .bg-neutral-50,
+.dark .bg-slate-100,
+.dark .bg-gray-100,
+.dark .bg-zinc-100,
+.dark .bg-neutral-100 {
+  background-color: var(--color-secondary) !important;
+  color: var(--color-foreground) !important;
+}
+
+.dark .bg-teal-50,
+.dark .bg-teal-100 {
+  background-color: rgba(20, 184, 166, 0.15) !important;
+  color: #2DD4BF !important;
+}
+
+.dark .bg-emerald-50,
+.dark .bg-emerald-100 {
+  background-color: rgba(16, 185, 129, 0.15) !important;
+  color: #34D399 !important;
+}
+
+.dark .bg-blue-50,
+.dark .bg-blue-100 {
+  background-color: rgba(59, 130, 246, 0.15) !important;
+  color: #60A5FA !important;
+}
+
+.dark .bg-amber-50,
+.dark .bg-amber-100 {
+  background-color: rgba(245, 158, 11, 0.15) !important;
+  color: #FBBF24 !important;
+}
+
+.dark .bg-rose-50,
+.dark .bg-rose-100,
+.dark .bg-red-50,
+.dark .bg-red-100 {
+  background-color: rgba(239, 68, 68, 0.15) !important;
+  color: #F87171 !important;
+}
+
+.dark .border-black\/15,
+.dark .border-black\/20,
+.dark .border-slate-100,
+.dark .border-slate-200,
+.dark .border-gray-100,
+.dark .border-gray-200 {
+  border-color: var(--color-border) !important;
+}
+
+.dark .border-black\/8,
+.dark .border-black\/10 {
+  border-color: var(--color-border) !important;
+}
