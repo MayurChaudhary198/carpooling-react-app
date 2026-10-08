@@ -21,6 +21,6 @@
     "build:admin": "turbo run build --filter=carpooling-admin"
   },
   "devDependencies": {
-    "turbo": "^2.4.4"
+    "turbo": "^2.11.7"
   }
 }
